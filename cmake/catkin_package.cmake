@@ -78,6 +78,9 @@
 #
 # @public
 #
+
+include(GNUInstallDirs)
+
 macro(catkin_package)
   debug_message(10 "catkin_package() called in file ${CMAKE_CURRENT_LIST_FILE}")
 
@@ -234,6 +237,7 @@ function(_catkin_package)
   set(lib_paths "")
   foreach(workspace ${CATKIN_WORKSPACES})
     list_append_unique(lib_paths ${workspace}/lib)
+    list_append_unique(lib_paths ${workspace}/${CMAKE_INSTALL_LIBDIR})
   endforeach()
 
   # merge explicitly listed libraries and libraries from non-catkin but find_package()-ed packages
