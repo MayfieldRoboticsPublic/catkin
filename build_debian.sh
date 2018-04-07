@@ -2,7 +2,7 @@
 
 set -eu
 
-DEB_VERSION="0.6.19-0may1"
+DEB_VERSION="0.6.19-may1"
 TMPDIR=$(mktemp -d)
 
 trap 'cleanup' EXIT
